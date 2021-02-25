@@ -59,7 +59,7 @@ func FindIn(fsys fs.FS, dir, name string) (parent string, err error) {
 		if err == nil {
 			return dir, nil
 		}
-		if dir == "." {
+		if dir == "." || dir == "/" {
 			// Hit root.
 			return "", os.ErrNotExist
 		}
